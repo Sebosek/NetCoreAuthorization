@@ -1,0 +1,21 @@
+﻿@page
+@model Protected
+
+<h1>Protected resource!</h1>
+
+<ul>
+    @foreach (var claim in User.Claims)
+    {
+        <li><strong>@claim.Type</strong> - @claim.Value</li>
+    }
+</ul>
+
+<h2>Access token</h2>
+<pre>
+    <code>@Model.AccessToken</code>
+</pre>
+
+<h2>Identity token</h2>
+<pre>
+    <code>@Model.IdentityToken</code>
+</pre>
